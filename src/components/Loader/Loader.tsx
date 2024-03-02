@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, ActivityIndicator, StyleSheet} from 'react-native';
-import {vars} from '../../src/styles';
+import {vars} from '../../styles';
 
 const Loader = () => {
   return (

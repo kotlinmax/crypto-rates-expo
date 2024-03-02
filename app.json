@@ -31,6 +31,12 @@
         "projectId": "ed5db40c-39b4-480d-bf1b-efd77ae6a093"
       }
     },
-    "owner": "kotlinmax"
+    "owner": "kotlinmax",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/ed5db40c-39b4-480d-bf1b-efd77ae6a093"
+    }
   }
 }
