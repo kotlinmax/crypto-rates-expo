@@ -5,12 +5,18 @@
 ## Демонстрация
 
 Проект доступен онлайн в приложении Expo Go: 
-  [Expo Go iOS](https://itunes.apple.com/app/apple-store/id982107779)
-  [Expo Go Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www)
+  - [Expo Go iOS](https://itunes.apple.com/app/apple-store/id982107779)
+  - [Expo Go Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www)
 
 Установите Expo Go и введите ссылку для просмотра приложения:
-  [iOS](https://itunes.apple.com/app/apple-store/id982107779)
-  [Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www)
+  - Для iOS 
+  ```bash 
+  exp://u.expo.dev/update/7cae14d0-4691-48e8-a790-2c12e4c54217
+  ```
+  - Для Android 
+  ```bash 
+  exp://u.expo.dev/update/b133f6b9-7de8-4209-a865-243863f50f45
+  ```
 
 
 ## Особенности
