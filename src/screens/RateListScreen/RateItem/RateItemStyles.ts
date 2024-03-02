@@ -20,11 +20,16 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 12,
   },
-  body: {},
+  title: {
+    fontSize: 18,
+    fontFamily: vars.fontFamily.bold,
+  },
   positive: {
     color: vars.colors.green,
+    fontFamily: vars.fontFamily.regular,
   },
   negative: {
     color: vars.colors.red,
+    fontFamily: vars.fontFamily.regular,
   },
 });

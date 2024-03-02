@@ -18,7 +18,7 @@ export default StyleSheet.create({
     borderRadius: 5,
   },
   reloadButtonText: {
-    color: '#FFFFFF',
+    color: vars.colors.white,
     textAlign: 'center',
     fontSize: 16,
   },

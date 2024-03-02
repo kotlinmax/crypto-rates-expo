@@ -3,6 +3,7 @@ import s from './ErrorBoundaryStyles';
 
 import {View, Text} from 'react-native';
 import {ErrorBoundaryProps, ErrorBoundaryState} from './IErrorBoundary';
+import {gs} from '../../styles';
 
 export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
@@ -20,8 +21,10 @@ export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBo
     if (this.state.error) {
       return (
         <View style={s.errorPage}>
-          <Text style={s.title}>Произошла ошибка. Свяжитесь со службой поддержки.</Text>
-          <Text style={s.description}>{this.state.error.toString() + '\n' + this.state.errorInfo?.componentStack}</Text>
+          <Text style={[s.title, gs.text]}>Something went wrong, contact customer support</Text>
+          <Text style={[s.description, gs.text]}>
+            {this.state.error.toString() + '\n' + this.state.errorInfo?.componentStack}
+          </Text>
         </View>
       );
     }

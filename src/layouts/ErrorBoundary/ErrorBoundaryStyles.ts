@@ -6,10 +6,10 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
+    marginTop: 40,
   },
   title: {
     fontSize: 18,
-    fontWeight: 'bold',
   },
   description: {
     marginTop: 10,

@@ -9,7 +9,7 @@ import {useFonts} from 'expo-font';
 import {NavigationContainer} from '@react-navigation/native';
 import {TScreens} from './src/types';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {fonts} from './src/styles';
+import {fonts, vars} from './src/styles';
 
 const Stack = createNativeStackNavigator<TScreens>();
 
@@ -26,8 +26,16 @@ export default function App() {
       <ErrorBoundary>
         <AppLayout>
           <Stack.Navigator>
-            <Stack.Screen name='Rates' component={RateListScreen} />
-            <Stack.Screen name='RateInfo' component={RateInfoScreen} />
+            <Stack.Screen
+              name='Rates'
+              component={RateListScreen}
+              options={{title: 'RATES', headerTitleStyle: {fontFamily: vars.fontFamily.bold}}}
+            />
+            <Stack.Screen
+              name='RateInfo'
+              component={RateInfoScreen}
+              options={{title: 'RATE INFO', headerTitleStyle: {fontFamily: vars.fontFamily.bold}}}
+            />
           </Stack.Navigator>
         </AppLayout>
       </ErrorBoundary>

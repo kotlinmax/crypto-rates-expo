@@ -13,8 +13,9 @@ export const vars = {
     secondary: '#3898ec',
     background: '#f8f9fa',
     text: '#212529',
-    green: 'rgb(36, 181, 36)',
-    red: 'rgb(196, 59, 59)',
+    green: '#24b524',
+    red: '#c43b3b',
+    white: '#ffff',
   },
   fontFamily: {
     regular: 'Mina-Regular',

@@ -5,6 +5,7 @@ import {View, Text} from 'react-native';
 import {useRoute, RouteProp} from '@react-navigation/native';
 
 import {TRateInfoRouteParams} from './IRateInfoScreen';
+import {gs} from '../../styles';
 
 const RateInfoScreen: React.FC = () => {
   const route = useRoute<RouteProp<TRateInfoRouteParams, 'RateInfo'>>();
@@ -14,15 +15,15 @@ const RateInfoScreen: React.FC = () => {
 
   return (
     <View style={s.rateInfo}>
-      <Text style={s.title}>
+      <Text style={[s.title]}>
         1 {baseCurrency.toUpperCase()} = {rate.toFixed(6)} {targetCurrency.toUpperCase()}
       </Text>
 
       <View style={[s.circle, diff24h >= 0 ? s.positive : s.negative]}>
-        <Text>RATE {rate.toFixed(6)}</Text>
-        <Text>24H DIFF {diff24h.toFixed(6)}</Text>
-        <Text>ASK {ask.toFixed(6)}</Text>
-        <Text>BID {bid.toFixed(6)}</Text>
+        <Text style={gs.text}>RATE {rate.toFixed(6)}</Text>
+        <Text style={gs.text}>24H DIFF {diff24h.toFixed(6)}</Text>
+        <Text style={gs.text}>ASK {ask.toFixed(6)}</Text>
+        <Text style={gs.text}>BID {bid.toFixed(6)}</Text>
       </View>
     </View>
   );

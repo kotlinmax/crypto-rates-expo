@@ -5,6 +5,7 @@ import {View, Text} from 'react-native';
 import {observer} from 'mobx-react-lite';
 import {StoresContext} from '../../stores/RootStore';
 import {IAppLayoutProps} from './IAppLayout';
+import {gs} from '../../styles';
 
 const AppLayout: React.FC<IAppLayoutProps> = observer(({children}) => {
   const ratesStore = useContext(StoresContext).ratesStore;
@@ -14,7 +15,7 @@ const AppLayout: React.FC<IAppLayoutProps> = observer(({children}) => {
     <View style={s.layout}>
       {children}
       <View style={s.footer}>
-        <Text>TOTAL: {isEmpty ? 0 : filteredRates.length || rates.length}</Text>
+        <Text style={gs.text}>TOTAL: {isEmpty ? 0 : filteredRates.length || rates.length}</Text>
       </View>
     </View>
   );

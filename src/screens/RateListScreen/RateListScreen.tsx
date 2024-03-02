@@ -8,6 +8,7 @@ import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import {observer} from 'mobx-react-lite';
 import {debounce} from 'lodash';
 import {StoresContext} from '../../stores/RootStore';
+import {gs} from '../../styles';
 
 const RateListScreen = observer(() => {
   const store = useContext(StoresContext).ratesStore;
@@ -47,20 +48,25 @@ const RateListScreen = observer(() => {
     <View style={s.rateItemList}>
       <View style={s.top}>
         <TouchableOpacity onPress={handleSortChange} style={s.sort}>
-          <Text>SORT {isDesc ? '▼' : '▲'}</Text>
+          <Text style={gs.text}>SORT {isDesc ? '▼' : '▲'}</Text>
         </TouchableOpacity>
-        <TextInput style={s.inputSearch} onChangeText={handleSearchChange} value={searchText} placeholder='Search' />
+        <TextInput
+          style={[s.inputSearch, gs.text]}
+          onChangeText={handleSearchChange}
+          value={searchText}
+          placeholder='Search'
+        />
       </View>
 
       {isLoading ? (
         <Loader />
       ) : isSorting || isSearching ? (
         <View style={s.info}>
-          <Text style={s.text}>{isSorting ? 'Sorting...' : 'Searching...'}</Text>
+          <Text style={[s.text, gs.text]}>{isSorting ? 'Sorting...' : 'Searching...'}</Text>
         </View>
       ) : isEmpty ? (
         <View style={s.info}>
-          <Text style={s.text}>Not found rates.</Text>
+          <Text style={[s.text, gs.text]}>Not found rates.</Text>
         </View>
       ) : (
         <LoaderErrorLayout isLoading={isLoading} error={error}>

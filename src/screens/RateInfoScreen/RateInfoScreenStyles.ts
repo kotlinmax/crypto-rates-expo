@@ -3,24 +3,32 @@ import {vars} from '../../styles';
 
 export default StyleSheet.create({
   rateInfo: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 20,
+    backgroundColor: vars.colors.white,
   },
   title: {
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: 28,
+    marginBottom: 10,
+    fontFamily: vars.fontFamily.bold,
   },
   circle: {
+    height: 250,
+    width: 250,
     marginTop: 10,
     padding: 20,
-    borderRadius: 100,
+    borderRadius: 200,
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: vars.colors.primary,
+    justifyContent: 'center',
     alignItems: 'center',
   },
   positive: {
-    backgroundColor: vars.colors.green,
+    borderColor: vars.colors.green,
   },
   negative: {
-    backgroundColor: vars.colors.red,
+    borderColor: vars.colors.red,
   },
 });

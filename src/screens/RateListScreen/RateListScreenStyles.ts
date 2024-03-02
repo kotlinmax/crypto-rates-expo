@@ -1,10 +1,12 @@
 import {StyleSheet} from 'react-native';
+import {vars} from '../../styles';
 
 export default StyleSheet.create({
   rateItemList: {
     flex: 1,
     padding: 10,
     justifyContent: 'space-between',
+    backgroundColor: vars.colors.white,
   },
   info: {
     flex: 1,
