@@ -2,20 +2,31 @@
 
 Приложение "Crypto Rates Expo" предоставляет актуальную информацию о курсах криптовалют.
 
+PS: После запуска приложения в Expo Go на Android 6.0 выявилось странно-медленная сортировка большого объема данных. После перехода с нативной сортировки (Array.sort()) на алгоритм быстрой сортировки, время сортировки ускорилось в 2 раза. В браузерном движке не имеет смысла применять быструю сортировку, так как Array.sort() под капотом уже применяет алгоритм быстрой сортировки. Но на мобильном устройстве не браузерный движок, возможно из-за этого сортировка происходит медленее. На всякий случай добавил ссылки на разные версии, с нативной и быстрой сортировкой.  
+
 ## Демонстрация
 
 Проект доступен онлайн в приложении Expo Go: 
-  - [Expo Go iOS](https://itunes.apple.com/app/apple-store/id982107779)
-  - [Expo Go Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www)
+  - [скачать Expo Go iOS](https://itunes.apple.com/app/apple-store/id982107779)
+  - [скачать Expo Go Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www)
+
 
 Установите Expo Go и введите ссылку для просмотра приложения:
-  - Для iOS 
+  - Версия для iOS с нативной сортировкой
   ```bash 
   exp://u.expo.dev/update/7cae14d0-4691-48e8-a790-2c12e4c54217
   ```
-  - Для Android 
+  - Версия для iOS с алгоритмом быстрой сортировкой
+  ```bash 
+  exp://u.expo.dev/update/036a4edb-83f0-4cf7-890b-38eba9747ebd
+  ```
+  - Версия для Android с нативной сортировкой
   ```bash 
   exp://u.expo.dev/update/b133f6b9-7de8-4209-a865-243863f50f45
+  ```
+  - Версия для Android с алгоритмом быстрой сортировкой
+  ```bash 
+  exp://u.expo.dev/update/dc09f9bc-b4e7-46b2-ab13-528951243eba
   ```
 
 
