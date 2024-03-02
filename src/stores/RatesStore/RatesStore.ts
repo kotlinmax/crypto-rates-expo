@@ -2,7 +2,6 @@ import API from '../../api';
 
 import {makeAutoObservable} from 'mobx';
 import {RateDetail} from '../../api/rates/IRatesAPI';
-import quickSort from '../../utils/quickSort';
 
 export default class RatesStore {
   tag: string = 'RatesStore';
@@ -61,8 +60,8 @@ export default class RatesStore {
       return this.isDesc ? bc.localeCompare(ac) : ac.localeCompare(bc);
     };
 
-    this.filteredRates = quickSort(this.filteredRates, comparator);
-    this.rates = quickSort(this.rates, comparator);
+    this.filteredRates.sort(comparator);
+    this.rates.sort(comparator);
   }
 
   async fetchRates() {
