@@ -9,16 +9,16 @@ import {gs} from '../../styles';
 
 const AppLayout: React.FC<IAppLayoutProps> = observer(({children}) => {
   const ratesStore = useContext(StoresContext).ratesStore;
-  const {rates, filteredRates, isEmpty} = ratesStore;
+  const {rates, filteredRates, isNotFound} = ratesStore;
 
   return (
     <View style={s.layout}>
       {children}
       <View style={s.footer}>
-        <Text style={gs.text}>TOTAL: {isEmpty ? 0 : filteredRates.length || rates.length}</Text>
+        <Text style={gs.text}>TOTAL: {isNotFound ? 0 : filteredRates.length || rates.length}</Text>
       </View>
     </View>
   );
 });
 
-export default AppLayout;
+export default React.memo(AppLayout);

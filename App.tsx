@@ -7,11 +7,12 @@ import RateInfoScreen from './src/screens/RateInfoScreen/RateInfoScreen';
 import {StatusBar} from 'expo-status-bar';
 import {useFonts} from 'expo-font';
 import {NavigationContainer} from '@react-navigation/native';
-import {TScreens} from './src/types';
+import {TNavigation} from './src/types';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {fonts, vars} from './src/styles';
 
-const Stack = createNativeStackNavigator<TScreens>();
+const Stack = createNativeStackNavigator<TNavigation>();
+const opts = {headerTitleStyle: {fontFamily: vars.fontFamily.bold}};
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts(fonts);
@@ -26,16 +27,8 @@ export default function App() {
       <ErrorBoundary>
         <AppLayout>
           <Stack.Navigator>
-            <Stack.Screen
-              name='Rates'
-              component={RateListScreen}
-              options={{title: 'RATES', headerTitleStyle: {fontFamily: vars.fontFamily.bold}}}
-            />
-            <Stack.Screen
-              name='RateInfo'
-              component={RateInfoScreen}
-              options={{title: 'RATE INFO', headerTitleStyle: {fontFamily: vars.fontFamily.bold}}}
-            />
+            <Stack.Screen name='Rates' component={RateListScreen} options={{title: 'RATES', ...opts}} />
+            <Stack.Screen name='RateInfo' component={RateInfoScreen} options={{title: 'RATE INFO', ...opts}} />
           </Stack.Navigator>
         </AppLayout>
       </ErrorBoundary>

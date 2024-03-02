@@ -10,10 +10,6 @@ const LoaderErrorLayout: React.FC<ILoaderErrorLayoutProps> = props => {
   const store = useContext(StoresContext).ratesStore;
   const {isLoading, error, children} = props;
 
-  const handleReload = () => {
-    store.fetchRates();
-  };
-
   if (isLoading) {
     return (
       <View style={s.layout}>
@@ -26,7 +22,7 @@ const LoaderErrorLayout: React.FC<ILoaderErrorLayoutProps> = props => {
     return (
       <View style={s.layout}>
         <Text style={s.errorText}>Error: {error}</Text>
-        <TouchableOpacity onPress={handleReload} style={s.reloadButton}>
+        <TouchableOpacity onPress={() => store.fetchRates()} style={s.reloadButton}>
           <Text style={s.reloadButtonText}>Reload</Text>
         </TouchableOpacity>
       </View>

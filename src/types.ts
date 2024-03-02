@@ -2,9 +2,9 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {IRateItemProps} from './screens/RateListScreen/RateItem/IRateItem';
 
 // Navigation
-export type TScreens = {
+export type TNavigation = {
   Rates: {};
   RateInfo: IRateItemProps;
 };
 
-export type TUseNavigation = NativeStackNavigationProp<TScreens>;
+export type TUseNavigation = NativeStackNavigationProp<TNavigation>;

@@ -18,7 +18,7 @@ export default class RatesStore {
     makeAutoObservable(this);
   }
 
-  get isEmpty(): Boolean {
+  get isNotFound(): Boolean {
     return Boolean(this.searchText && !this.filteredRates.length);
   }
 
@@ -34,8 +34,21 @@ export default class RatesStore {
     this.searchText = value;
   }
 
+  setError(value: string) {
+    this.error = value;
+  }
+
+  setIsLoading(value: boolean) {
+    this.isLoading = value;
+  }
+
+  setRates(value: RateDetail[]) {
+    this.rates = value;
+  }
+
   setFilteredRates(value: string) {
-    this.filteredRates = this.rates.filter(rate => rate.baseCurrency.includes(value.toLowerCase()));
+    const rate = value.toLowerCase();
+    this.filteredRates = this.rates.filter(e => e.baseCurrency.includes(rate));
   }
 
   changeSort() {
@@ -51,22 +64,10 @@ export default class RatesStore {
     this.rates.sort(comparator);
   }
 
-  setError(value: string) {
-    this.error = value;
-  }
-
-  setIsLoading(value: boolean) {
-    this.isLoading = value;
-  }
-
-  setRates(value: RateDetail[]) {
-    this.rates = value.sort((a, b) => a.baseCurrency.localeCompare(b.baseCurrency));
-  }
-
   async fetchRates() {
     try {
-      this.setIsLoading(true);
       this.setError('');
+      this.setIsLoading(true);
       this.setRates(await API.rates.getRates());
     } catch (error) {
       this.setError('Failed to fetch rates');

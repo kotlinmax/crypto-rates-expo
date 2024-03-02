@@ -15,6 +15,8 @@ export default StyleSheet.create({
     fontFamily: vars.fontFamily.bold,
   },
   circle: {
+    justifyContent: 'center',
+    alignItems: 'center',
     height: 250,
     width: 250,
     marginTop: 10,
@@ -22,8 +24,6 @@ export default StyleSheet.create({
     borderRadius: 200,
     borderWidth: 1,
     borderColor: vars.colors.primary,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   positive: {
     borderColor: vars.colors.green,

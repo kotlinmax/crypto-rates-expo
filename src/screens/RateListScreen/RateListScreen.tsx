@@ -1,5 +1,4 @@
 import React, {useCallback, useContext, useEffect} from 'react';
-import Loader from '../../components/Loader/Loader';
 import RateItemList from './RateItemList/RateItemList';
 import LoaderErrorLayout from '../../layouts/LoaderErrorLayout/LoaderErrorLayout';
 import s from './RateListScreenStyles';
@@ -13,7 +12,8 @@ import {gs} from '../../styles';
 const RateListScreen = observer(() => {
   const store = useContext(StoresContext).ratesStore;
   const {rates, filteredRates, searchText, error} = store;
-  const {isLoading, isEmpty, isDesc, isSorting, isSearching} = store;
+  const {isLoading, isNotFound, isDesc, isSorting, isSearching} = store;
+  const isShowInfo = isSorting || isSearching || isNotFound;
 
   useEffect(() => {
     if (!rates.length) {
@@ -41,7 +41,7 @@ const RateListScreen = observer(() => {
     setTimeout(() => {
       store.changeSort();
       store.setIsSorting(false);
-    }, 0);
+    }, 0); // for big data (1 million)
   };
 
   return (
@@ -57,16 +57,11 @@ const RateListScreen = observer(() => {
           placeholder='Search'
         />
       </View>
-
-      {isLoading ? (
-        <Loader />
-      ) : isSorting || isSearching ? (
+      {isShowInfo ? (
         <View style={s.info}>
-          <Text style={[s.text, gs.text]}>{isSorting ? 'Sorting...' : 'Searching...'}</Text>
-        </View>
-      ) : isEmpty ? (
-        <View style={s.info}>
-          <Text style={[s.text, gs.text]}>Not found rates.</Text>
+          <Text style={[s.text, gs.text]}>
+            {isSorting ? 'Sorting...' : isSearching ? 'Searching...' : 'Not found rates.'}
+          </Text>
         </View>
       ) : (
         <LoaderErrorLayout isLoading={isLoading} error={error}>

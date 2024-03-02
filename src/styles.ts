@@ -15,7 +15,8 @@ export const vars = {
     text: '#212529',
     green: '#24b524',
     red: '#c43b3b',
-    white: '#ffff',
+    white: '#fff',
+    black: '#000',
   },
   fontFamily: {
     regular: 'Mina-Regular',

@@ -11,12 +11,8 @@ const RateItem: React.FC<IRateItemProps> = props => {
   const {baseCurrency, targetCurrency, rate, diff24h} = props;
   const navigation = useNavigation<TUseNavigation>();
 
-  const handlePress = () => {
-    navigation.navigate('RateInfo', props);
-  };
-
   return (
-    <TouchableOpacity style={s.rateItem} onPress={handlePress}>
+    <TouchableOpacity style={s.rateItem} onPress={() => navigation.navigate('RateInfo', props)}>
       <View style={s.header}>
         <Text style={s.title}>
           {baseCurrency.toUpperCase()}/{targetCurrency.toUpperCase()}
