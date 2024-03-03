@@ -14,6 +14,9 @@ export default StyleSheet.create({
     marginBottom: 10,
     fontFamily: vars.fontFamily.bold,
   },
+  copyText: {
+    marginTop: 20,
+  },
   circle: {
     justifyContent: 'center',
     alignItems: 'center',

@@ -4,6 +4,7 @@ import AppLayout from './src/layouts/AppLayout/AppLayout';
 import RateListScreen from './src/screens/RateListScreen/RateListScreen';
 import RateInfoScreen from './src/screens/RateInfoScreen/RateInfoScreen';
 
+import {RootSiblingParent} from 'react-native-root-siblings';
 import {StatusBar} from 'expo-status-bar';
 import {useFonts} from 'expo-font';
 import {NavigationContainer} from '@react-navigation/native';
@@ -22,16 +23,18 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <StatusBar style='auto' />
-      <ErrorBoundary>
-        <AppLayout>
-          <Stack.Navigator>
-            <Stack.Screen name='Rates' component={RateListScreen} options={{title: 'RATES', ...opts}} />
-            <Stack.Screen name='RateInfo' component={RateInfoScreen} options={{title: 'RATE INFO', ...opts}} />
-          </Stack.Navigator>
-        </AppLayout>
-      </ErrorBoundary>
-    </NavigationContainer>
+    <RootSiblingParent>
+      <NavigationContainer>
+        <StatusBar style='auto' />
+        <ErrorBoundary>
+          <AppLayout>
+            <Stack.Navigator>
+              <Stack.Screen name='Rates' component={RateListScreen} options={{title: 'RATES', ...opts}} />
+              <Stack.Screen name='RateInfo' component={RateInfoScreen} options={{title: 'RATE INFO', ...opts}} />
+            </Stack.Navigator>
+          </AppLayout>
+        </ErrorBoundary>
+      </NavigationContainer>
+    </RootSiblingParent>
   );
 }

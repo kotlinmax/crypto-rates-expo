@@ -4,20 +4,24 @@
 
 ## Демонстрация
 
-Проект доступен онлайн в приложении Expo Go: 
-  - [скачать Expo Go Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www)
-  - [скачать Expo Go iOS](https://itunes.apple.com/app/apple-store/id982107779)
+Проект доступен онлайн в приложении Expo Go:
+
+- [скачать Expo Go Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www)
+- [скачать Expo Go iOS](https://itunes.apple.com/app/apple-store/id982107779)
 
 Установите Expo Go и введите ссылку для просмотра приложения:
-  - Версия для Android 
-  ```bash 
-  exp://u.expo.dev/update/b2275ea6-be15-442a-b3e1-8a1a4aeac1c9
-  ```
-  - Версия для iOS
-  ```bash 
-  exp://u.expo.dev/update/080ef05c-00f8-4d2f-946d-2b03da96d9b2
-  ```
 
+- Версия для Android
+
+```bash
+exp://u.expo.dev/update/7c3b6631-c243-4bed-9bf8-bec3b0728af5
+```
+
+- Версия для iOS
+
+```bash
+exp://u.expo.dev/update/1fc5e309-3783-49cf-996c-1e262456a3f0
+```
 
 ## Функционал
 
@@ -55,6 +59,7 @@ npm install
 ```
 
 ## Сборка для Production:
+
 Вы можете запустить приложение на выбранной платформе с помощью одной из следующих команд:
 
 ```bash
@@ -64,7 +69,9 @@ npm run web         # Запускает приложение в веб-брау
 ```
 
 ## Тестирование
+
 Запустите тесты с помощью следующей команды:
+
 ```bash
 npm test
 ```
