@@ -33,7 +33,7 @@ const RateListScreen = observer(() => {
   const handleSearchChange = (text: string) => {
     store.setIsSearching(true);
     store.setSearchText(text);
-    debouncedSearch(text);
+    debouncedSearch(text); // for big data
   };
 
   const handleSortChange = () => {
@@ -41,7 +41,7 @@ const RateListScreen = observer(() => {
     setTimeout(() => {
       store.changeSort();
       store.setIsSorting(false);
-    }, 0); // for big data (1 million)
+    }, 0); // for big data
   };
 
   return (
