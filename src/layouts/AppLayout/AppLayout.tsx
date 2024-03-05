@@ -21,4 +21,4 @@ const AppLayout: React.FC<IAppLayoutProps> = observer(({children}) => {
   );
 });
 
-export default React.memo(AppLayout);
+export default AppLayout;
